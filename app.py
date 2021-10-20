@@ -22,7 +22,10 @@ def on_list():
         m[doc] = json.loads(f.read())
     except:
       pass
-  return jsonify(m)
+  return Response(
+    json.dumps(m, indent=2, sort_keys=True),
+    mimetype="application/json"
+  )
 
 @app.route("/render/<key>")
 def on_render(key):
