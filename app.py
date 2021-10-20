@@ -23,7 +23,7 @@ def on_list():
     except:
       pass
   return Response(
-    json.dumps(m, indent=2, sort_keys=True),
+    json.dumps(m, indent=2, sort_keys=True, ensure_ascii=False),
     mimetype="application/json"
   )
 
